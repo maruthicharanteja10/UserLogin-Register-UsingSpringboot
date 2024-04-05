@@ -14,11 +14,14 @@
 				<div class="col-12 col-md-7  p-5 ">
 					<img alt="" src="img/hack4.jpg" height="410px">
 				</div>
-				<div class=" col-12 col-md-5 mt-1 p-5">
-					<div class="card shadow p-2  bg-body-tertiary rounded">
-						<div class="card">
-							<div class="card-header text-center">
-								<h3>Login Page</h3>
+				<div class=" col-12 col-md-5  p-5">
+
+					<div class="card shadow  bg-body-tertiary rounded">
+						<div class="card text-bg-dark">
+							<img src="img/bg-3.jpg" class="card-img" alt="..." height="408px">
+							<div class="card-img-overlay">
+
+								<h3 class="text-white text-center">Login Page</h3>
 
 								<th:block th:if="${param.error}">
 									<p class="text-center text-danger fs-5">
@@ -28,34 +31,37 @@
 								<th:block th:if="${param.logout}">
 									<p class="text-center text-success fs-5">Logout sucessfully</p>
 								</th:block>
-							</div>
-							<div class="card-body">
-								<form action="userLogin" method="post">
 
-									<div class="mb-4">
-										<label>Enter Email</label> <input type="email" name="username"
-											class="form-control">
-									</div>
+								<div class="card-body">
+									<form action="userLogin" method="post">
 
-									<div class="mb-4">
-										<label>Enter Password</label> <input type="password" name="password"
-											class="form-control">
-									</div>
-									<div class=" mb-4">
-										<button class="btn btn-primary col-md-12">Login</button>
-									</div>
-								</form>
-							</div>
-							<div class=" text-center card-footer">
-								<p class="fs-6">
-									don't have an account <a href="register" class="text-decoration-none">register</a>
-								</p>
+										<div class="mb-4 text-white">
+											<label>Enter Email</label> <input type="email" name="username"
+												class="form-control">
+										</div>
+
+										<div class="mb-5 text-white">
+											<label>Enter Password</label> <input type="password" name="password"
+												class="form-control">
+										</div>
+										<div class=" mb-4">
+											<button class="btn btn-primary col-md-12">Login</button>
+										</div>
+									</form>
+									<div class=" text-center text-white">
+									<p class="fs-6">
+										don't have an account <a href="register"
+											class="text-decoration-none">register</a>
+									</p>
+								</div>
+								</div>
+								
 							</div>
 						</div>
+
 					</div>
 				</div>
 			</div>
-		</div>
 	</section>
 </body>
 

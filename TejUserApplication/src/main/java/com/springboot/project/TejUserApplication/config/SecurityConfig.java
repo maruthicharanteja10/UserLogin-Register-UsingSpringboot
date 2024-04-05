@@ -1,6 +1,7 @@
 package com.springboot.project.TejUserApplication.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -13,6 +14,8 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
+	@Autowired
+	public CustomAuthSucessHandler sucessHandler;
 
 	@Autowired
 	private UserDetailsService userDetailsService;
@@ -21,28 +24,24 @@ public class SecurityConfig {
 	public BCryptPasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
-	
+
 	@Bean
-	public DaoAuthenticationProvider daoAuthenticationProvider()
-	{
-		DaoAuthenticationProvider daoAuthenticationProvider=new DaoAuthenticationProvider();
+	public DaoAuthenticationProvider daoAuthenticationProvider() {
+		DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
 		daoAuthenticationProvider.setUserDetailsService(userDetailsService);
 		daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
 		return daoAuthenticationProvider;
 	}
-	
+
 	@Bean
-	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception
-	{
-		
-		
-		http.csrf().disable().authorizeHttpRequests().requestMatchers("/user/**").hasRole("USER")
-					.requestMatchers("/**").permitAll().and()
-					.formLogin().loginPage("/signin")
-					.loginProcessingUrl("/userLogin")
-					.defaultSuccessUrl("/employees").permitAll();
-	return	http.build();
-		
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+
+		http.csrf().disable().authorizeHttpRequests().requestMatchers("/admin/**").hasRole("ADMIN")
+				.requestMatchers("/manager/**").hasRole("MANAGER").requestMatchers("/**").permitAll().and().formLogin()
+				.loginPage("/signin").loginProcessingUrl("/userLogin").defaultSuccessUrl("/employees")
+				.successHandler(sucessHandler).permitAll();
+		return http.build();
+
 	}
 
 }

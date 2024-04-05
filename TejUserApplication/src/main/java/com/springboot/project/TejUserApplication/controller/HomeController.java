@@ -26,7 +26,10 @@ public class HomeController {
 	public String register() {
 		return "register";
 	}
-
+	@GetMapping("/signin")
+	public String login() {
+		return "login";
+	}
 	@PostMapping("/saveUser")
 	public String saveUser(@ModelAttribute User user, HttpSession session) {
 
@@ -46,8 +49,5 @@ public class HomeController {
 		return "redirect:/register";
 	}
 
-	@GetMapping("/signin")
-	public String login() {
-		return "login";
-	}
+	
 }
