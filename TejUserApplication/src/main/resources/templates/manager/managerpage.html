@@ -8,7 +8,7 @@
 		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 	<style>
 		body {
-			background-color: rgb(64, 128, 128);
+			background-color: rgb(128, 128, 255);
 		}
 	</style>
 </head>
@@ -28,7 +28,7 @@
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="nav-link" th:href="@{/employees}">Employee Details</a>
+					<a class="nav-link" href="#">Employee Details</a>
 				</li>
 
 			</ul>
@@ -44,7 +44,7 @@
 			<div  class="addstudent">
 				<br>
 				<div class="col-lg-3">
-					<a th:href="@{/manager/employee/new}" class="btn btn-dark btn-sm mb-3">Add Employee</a>
+					<a th:href="@{/manager/employee/new}" class="btn btn-warning btn-sm mb-3">Add Employee</a>
 				</div>
 
 			</div>
@@ -67,7 +67,7 @@
 						<td th:text="${employee.phoneno}"></td>
 						<div>
 							<td><a th:href="@{/manager/employees/edit/{id}(id=${employee.id})}"
-									class=" btn btn-primary">Update</a></td>
+									class=" btn btn-success">Update</a></td>
 						</div>
 
 		</div>
