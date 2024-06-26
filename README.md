@@ -8,6 +8,7 @@ The User Application is a Spring Boot project that demonstrates the use of vario
 
 - User Registration: Allows new users to sign up.
 - User Login: Authenticates existing users.
+- User Authentication: Ensures secure access to application resources.
 - User Management: Provides CRUD operations for managing user data.
 - Security: Implements user authentication using Spring Security.
 - Database Integration: Uses JPA for database operations.
@@ -51,7 +52,7 @@ The User Application is a Spring Boot project that demonstrates the use of vario
 
 ### Running the Application
 
-Once the application is running, you can access the registration and login pages through a web browser.
+Once the application is running, you can access it via http://localhost:8080. Use a tool like Postman or a web browser to interact with the API endpoints.
 
 ### API Endpoints
 
@@ -60,6 +61,10 @@ Once the application is running, you can access the registration and login pages
 - `GET /users/{id}` - Retrieve a user by ID
 - `PUT /users/{id}` - Update a user by ID
 - `DELETE /users/{id}` - Delete a user by ID
+
+- POST /register - Register a new user
+- POST /login - Authenticate a user
+
 
 ## Testing
 
