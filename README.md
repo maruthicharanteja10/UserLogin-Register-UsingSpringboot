@@ -1,7 +1,3 @@
-Based on the information available on the GitHub repository, here is a detailed description of the project for the README file:
-
----
-
 # User Application - Spring Boot
 
 ## Description
@@ -86,7 +82,7 @@ This project is licensed under the MIT License. See the LICENSE file for details
 For any inquiries or support, please contact:
 
 - Maruthi Charan Teja
-- [Your Email Address]
+- charantejdonthireddy@gmail.com
 
 ---
 
